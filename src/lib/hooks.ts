@@ -30,17 +30,14 @@ function useFetch<T>(
 
   useEffect(() => {
     const fetchData = async () => {
-      console.log("api called");
       try {
         const response = await fetch(url);
         const responseJSON = await response.json(); // Only call this once!
-        console.log("in hook ", responseJSON);
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         if (responseJSON.Title) {
-          console.log("yesss", responseJSON.imdbID);
           setState({ data: responseJSON as T, loading: false, error: null });
         } else {
           setState({ data: null, loading: false, error: null });
@@ -65,17 +62,14 @@ function useFetchHook<T>(url: string) {
 
   useEffect(() => {
     const fetchData = async () => {
-      console.log("api called for inside page ");
       try {
         const response = await fetch(url);
         const responseJSON = await response.json(); // Only call this once!
-        console.log("in hook ", responseJSON);
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         if (responseJSON.Title) {
-          console.log("yesss", responseJSON.imdbID);
           setState({ data: responseJSON as T, loading: false, error: null });
         } else {
           setState({ data: null, loading: false, error: null });

@@ -28,19 +28,11 @@ export default function moviesPage() {
 
   useEffect(() => {
     if (response.data) {
-      console.log("movielist updated : ", response);
       setMovieList([response.data]);
     } else {
       setMovieList([]);
     }
   }, [response.data]);
-
-  useEffect(() => {
-    console.log("movieList :   ");
-    if (movieList) {
-      console.log(movieList[0]?.imdbID);
-    }
-  }, [movieList]);
 
   return (
     <div className=" items-center justify-center min-h-screen px-4">
