@@ -1,5 +1,23 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+### Hosted on Vercel
+
+https://movie-app-beta-peach.vercel.app/
+
+## Tech Stack
+
+    Framework: Next.js
+    Language: TypeScript, React
+    Styling: Tailwind CSS, Radix UI
+    Icons: Lucide React
+    State/Utils: Custom React hooks
+
+## Sample .env config
+
+```
+NEXT_PUBLIC_OMDB_API_KEY= "YOUR_API_KEY"
+```
+
 ## Getting Started
 
 First, run the development server:
