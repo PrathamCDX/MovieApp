@@ -19,9 +19,7 @@ const MovieDetail: React.FC<MovieDetailProps> = ({
   const [rating, setRating] = useState<number>(0);
   const [hoverRating, setHoverRating] = useState<number>(0);
 
-  // Generate a unique key for this movie based on title and year
-
-  // Load rating from localStorage on component mount
+ 
   useEffect(() => {
     const savedRating = localStorage.getItem(imdbID);
     if (savedRating) {
@@ -29,7 +27,6 @@ const MovieDetail: React.FC<MovieDetailProps> = ({
     }
   }, [imdbID]);
 
-  // Save rating to localStorage whenever it changes
   const handleRatingClick = (starRating: number) => {
     setRating(starRating);
     localStorage.setItem(imdbID, starRating.toString());
