@@ -15,6 +15,13 @@ import {
 export function ToggleMode() {
   const { setTheme } = useTheme();
 
+  React.useEffect(() => {
+    const themeDetails = localStorage.getItem("theme");
+    if (themeDetails) {
+      setTheme(themeDetails);
+    }
+  }, []);
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -25,13 +32,28 @@ export function ToggleMode() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
+        <DropdownMenuItem
+          onClick={() => {
+            setTheme("light");
+            localStorage.setItem("theme", "light");
+          }}
+        >
           Light
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
+        <DropdownMenuItem
+          onClick={() => {
+            setTheme("dark");
+            localStorage.setItem("theme", "light");
+          }}
+        >
           Dark
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
+        <DropdownMenuItem
+          onClick={() => {
+            setTheme("system");
+            localStorage.setItem("theme", "light");
+          }}
+        >
           System
         </DropdownMenuItem>
       </DropdownMenuContent>
